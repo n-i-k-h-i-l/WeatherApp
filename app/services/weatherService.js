@@ -16,6 +16,18 @@ app.service('weatherService', ['$http', '$q','$filter', '$window',function($http
         }
         return deferred.promise;
     }
+    
+    this.getJsonFromAPI = function(url){
+        var deferred = $q.defer();
+        console.log('url: '+url);
+        $http.get(url)
+            .then(function (response) {
+                deferred.resolve(response.data);
+            }, function (response) {
+               deferred.reject({ error: true, message: 'Error: ' + response.data.message });
+            });
+        return deferred.promise;
+    }
 
 }]);
 /*.factory('GetWeatherData', ['$resource', function ($resource) {
