@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Forecast</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src = "app/app.js"></script>
+    <script src = "app/controller/weatherController.js"></script>
+    <script src = "app/factory/weatherFactory.js"></script>
+    <script src = "app/services/weatherService.js"></script>
+</head>
+<body ng-controller="weatherController">
+
+<input type="text" placeholder="City">
+<button ng-click="getJson()">Submit</button>
+<p>{{data}}</p>
+</body>
+</html>
