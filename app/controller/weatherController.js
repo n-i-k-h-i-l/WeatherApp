@@ -1,12 +1,15 @@
 app.controller('weatherController', ['$http', '$scope', 'weatherService', 'weatherFactory',
 
-    function($http, $scope, weatherService, weatherFactory, GetWeatherData){
+    function($http, $scope, weatherService, weatherFactory){
 
         weatherService.getCurrentPosition().then(function(response){
             console.log(response);
             var lat = response.coords.latitude;
             var lon = response.coords.longitude;
         var data={"lat":lat,"lon":lon};
+            $scope.location = data;
+            console.log(data.lat);
+            
             //var getWeatherData=new GetWeatherData(data);
         /*getWeatherData.get(function(result,responseHeader){
             console.log(result);

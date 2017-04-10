@@ -1,4 +1,4 @@
-app.service('weatherService', ['$http', '$q','$filter', '$window', '$resource',function($http, $q, $filter, $window,$resource){
+app.service('weatherService', ['$http', '$q','$filter', '$window',function($http, $q, $filter, $window){
 
     this.getCurrentPosition = function() {
         var deferred = $q.defer();
@@ -17,7 +17,7 @@ app.service('weatherService', ['$http', '$q','$filter', '$window', '$resource',f
         return deferred.promise;
     }
 
-}])
+}]);
 /*.factory('GetWeatherData', ['$resource', function ($resource) {
     //$resource() function returns an object of resource class
     return function (customHeader) {
