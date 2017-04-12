@@ -14,7 +14,8 @@
 <input type="text" placeholder="City" ng-model='city'>
 <button ng-click="getJson()">Submit</button>
 <button ng-click="getCurrentWeather()">Current Temprature</button>
-<p>{{data}}</p>
+
+    <p>{{data}}</p>
 <p>{{location.lon}}</p>
 <div ng-if="currentTemp !== ''">
     <label>Input City Temprature: {{currentTemp}}</label>

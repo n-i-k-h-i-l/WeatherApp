@@ -35,7 +35,6 @@ app.controller('weatherController', ['$http', '$scope', 'weatherService', 'weath
                 );*/
 
 
-
         }, function(response){
             console.log(response);
         });
