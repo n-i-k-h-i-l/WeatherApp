@@ -57,7 +57,6 @@ app.controller('weatherController', ['$http', '$scope', 'weatherService', 'weath
             console.log("URL= " +url);
              weatherService.getJsonFromAPI(url).then(function(response){
                  $scope.currentTemp = response.main.temp;
-                  
             }, function(response){
                 //console.log(response.main.temp);
             });
