@@ -52,11 +52,12 @@ app.controller('weatherController', ['$http', '$scope', 'weatherService', 'weath
 
          $scope.getCurrentWeather = function(){
             console.log("getCurrentWeather called!!!");
-            var url = 'http://api.openweathermap.org/data/2.5/weather?q='+$scope.city+'&lat='+data.lat+'&lon='+data.lon+'&mode=json&appid='+apiId+'&units=metric';
+            var url = 'http://api.openweathermap.org/data/2.5/weather?q='+$scope.city+'&mode=json&appid='+apiId+'&units=metric';
             console.log("URL= " +url);
              weatherService.getJsonFromAPI(url).then(function(response){
                  $scope.currentTemp = response.main.temp;
             }, function(response){
+                 $scope.currentTemp = response.main.temp;
                 //console.log(response.main.temp);
             });
         }
