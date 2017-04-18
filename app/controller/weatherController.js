@@ -1,6 +1,6 @@
-app.controller('weatherController', ['$http', '$scope', 'weatherService', 'weatherFactory',
+app.controller('weatherController', ['$http', '$scope', 'weatherService', 'weatherFactory','GetWeatherData',
 
-    function($http, $scope, weatherService, weatherFactory){
+    function($http, $scope, weatherService, weatherFactory,GetWeatherData){
         var apiId = '084c66197563211ec73423a8f2b503fc';
         var data = {};
         weatherService.getCurrentPosition().then(function(response){
