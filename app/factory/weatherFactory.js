@@ -24,4 +24,24 @@ app.factory('weatherFactory', ['$filter', function($filter){
 
 
 return this;
-}]);
+}])
+.factory('GetWeatherData', ['$resource', function ($resource) {
+    //$resource() function returns an object of resource class
+    return function (customHeader) {
+     var url = 'http://api.openweathermap.org/data/2.5/find?lat='+ customHeader.lat +
+                '&lon='+ customHeader.lon +
+                '&appid=084c66197563211ec73423a8f2b503fc';
+        return $resource(url,
+        {},
+        //Handy for update & delete. id will be set with id of instance
+        {
+            get:
+            {
+                method: 'GET'
+                
+            }
+        }
+        );
+    };
+}
+]);
