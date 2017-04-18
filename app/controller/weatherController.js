@@ -15,6 +15,9 @@ app.controller('weatherController', ['$http', '$scope', 'weatherService', 'weath
         });
         
         $scope.getJson = function(){
+                 data.url = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + data.lat +
+                '&lon='+ data.lon +
+                '&appid=084c66197563211ec73423a8f2b503fc';
             var getWeatherData=new GetWeatherData(data);
             getWeatherData.get(function(result,responseHeader){
                 console.log(result);
