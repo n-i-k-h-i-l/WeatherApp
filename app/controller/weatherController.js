@@ -14,21 +14,12 @@ app.controller('weatherController', ['$http', '$scope', 'weatherService', 'weath
             console.log(response);
         });
         
-       var getWeatherData=new GetWeatherData(data);
-        getWeatherData.get(function(result,responseHeader){
-            console.log(result);
-        },function(response){
-            console.log('error');
-        });
-        
         $scope.getJson = function(){
-            console.log("getJSon called!!!");
-            var url = 'http://api.openweathermap.org/data/2.5/forecast?lat='+data.lat+'&lon='+data.lon+'&mode=json&appid='+apiId;
-            
-            weatherService.getJsonFromAPI(url).then(function(response){
-                console.log(response);
-            }, function(response){
-                console.log(response);
+            var getWeatherData=new GetWeatherData(data);
+            getWeatherData.get(function(result,responseHeader){
+                console.log(result);
+            },function(response){
+                console.log('error');
             });
         }
 
