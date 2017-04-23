@@ -9,13 +9,15 @@
     <script src = "app/controller/weatherController.js"></script>
     <script src = "app/factory/weatherFactory.js"></script>
     <script src = "app/services/weatherService.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style type="text/css">
 		
 			table, th, td {
 				border: 1px solid black;
 			}
 		
-	</style
+    </style>
 </head>
 <body ng-controller="weatherController">
 
@@ -23,9 +25,7 @@
 <button ng-click="getJson()">Submit</button>
 <button ng-click="getCurrentWeather()">Current Temprature</button>
 <button ng-click="getForecastDetials()">Get Forcast Details</button>
-    <p>{{data}}</p>
-<p>{{location.lon}}</p>
-
+    
 <table style="width:100%" ng-if="forecastList" >
 <tr>
    <td>Date & Time</td>
