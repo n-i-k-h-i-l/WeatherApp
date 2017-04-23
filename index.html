@@ -27,14 +27,14 @@
 <button ng-click="getCurrentWeather()">Current Temprature</button>
 <button ng-click="getForecastDetials()">Get Forcast Details</button>
     
-<table style="width:100%" ng-if="forecastList" >
+<table style="width:100%" ng-if="filteredList" >
 <tr>
    <td>Date & Time</td>
    <td>Weather Condition</td>
     <td>Forcast</td>
     <td>Temprature</td>
   </tr>
-  <tr ng-repeat="x in forecastList">
+  <tr ng-repeat="x in filteredList">
    <td>{{x.time}}</td>
    <td>{{x.cond}}</td>
     <td><img src={{x.weatherIcon}} /></td>
