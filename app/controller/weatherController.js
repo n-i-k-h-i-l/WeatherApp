@@ -60,6 +60,11 @@ app.controller('weatherController', ['$http', '$scope', 'weatherService', 'weath
                     $scope.filteredList= $scope.filterWeatherData($scope.forecastList);
                     console.log("Filetered List !!!");
                     console.log($scope.filteredList);
+                    $scope.todayData={};
+                    $scope. todayData = $scope.filteredList.splice(0,1);
+                    //$scope.filteredList.splice(1,$scope.filteredList.length);
+                    console.log($scope.todayData);
+                    //console.log($scope.remainingData);
 					//alert(count);
                 }
 				

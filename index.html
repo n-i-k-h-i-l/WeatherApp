@@ -27,7 +27,7 @@
 <button ng-click="getCurrentWeather()">Current Temprature</button>
 <button ng-click="getForecastDetials()">Get Forcast Details</button>
     
-<table style="width:100%" ng-if="filteredList" >
+<!--<table style="width:100%" ng-if="filteredList" >
 <tr>
    <td>Date & Time</td>
    <td>Weather Condition</td>
@@ -41,7 +41,31 @@
     <td>{{x.degree}}</td>
   </tr>
  
-</table> 
+</table>-->
+    
+    <div class="container-fluid">
+          <div class="row justify-content-md-center">
+            <div class="col-12 col-sm-12 col-md-12" ng-if="todayData">
+                <span>Day</span> {{todayData[0].time}}<br>
+                <span>Conditions</span> {{todayData[0].cond}}<br>
+                <span>Weather Icon</span> <img src={{todayData[0].weatherIcon}} /><br>
+                <span>Temperature</span> {{todayData[0].degree}}<br>
+                <span>Max Temperature</span> {{todayData[0].maxTemp}}<br>
+                <span>Min Temperature</span> {{todayData[0].minTemp}}<br>
+            </div>
+        </div>
+        <div ng-repeat="x in filteredList">
+            <div class="col-3 col-sm-6  col-md-3">
+               <span>Day</span> {{x.time}}<br>
+                <span>Conditions</span> {{x.cond}}<br>
+                <span>Weather Icon</span> <img src={{x.weatherIcon}} /><br>
+                <span>Temperature</span> {{x.degree}}<br>
+                <span>Max Temperature</span> {{x.maxTemp}}<br>
+                <span>Min Temperature</span> {{x.minTemp}}<br>
+            </div>
+        </div>
+    </div>    
+    
 <div ng-if="currentTemp">
     <label>Input City Temprature: {{currentTemp}}</label>
 </div>
