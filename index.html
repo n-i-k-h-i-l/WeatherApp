@@ -12,12 +12,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<style type="text/css">
-		
-			table, th, td {
-				border: 1px solid black;
-			}
-		
+    <style type="text/css">
+            table, th, td {
+                border: 1px solid black;
+            }
     </style>
 </head>
 <body ng-controller="weatherController">
@@ -26,7 +24,7 @@
 <button ng-click="getJson()">Submit</button>
 <button ng-click="getCurrentWeather()">Current Temprature</button>
 <button ng-click="getForecastDetials()">Get Forcast Details</button>
-    
+
 <!--<table style="width:100%" ng-if="filteredList" >
 <tr>
    <td>Date & Time</td>
@@ -40,32 +38,33 @@
     <td><img src={{x.weatherIcon}} /></td>
     <td>{{x.degree}}</td>
   </tr>
- 
+
 </table>-->
-    
     <div class="container-fluid">
-          <div class="row justify-content-md-center">
+          <div class="row" style="text-align: center">
             <div class="col-12 col-sm-12 col-md-12" ng-if="todayData">
-                <span>Day</span> {{todayData[0].time}}<br>
-                <span>Conditions</span> {{todayData[0].cond}}<br>
-                <span>Weather Icon</span> <img src={{todayData[0].weatherIcon}} /><br>
-                <span>Temperature</span> {{todayData[0].degree}}<br>
-                <span>Max Temperature</span> {{todayData[0].maxTemp}}<br>
-                <span>Min Temperature</span> {{todayData[0].minTemp}}<br>
+                <b>Day: </b> {{todayData[0].time}}<br>
+                <b>Conditions: </b> {{todayData[0].cond}}<br>
+                <b>Weather Icon: </b> <img src={{todayData[0].weatherIcon}} /><br>
+                <b>Temperature: </b> {{todayData[0].degree}}<br>
+                <b>Max Temperature: </b> {{todayData[0].maxTemp}}<br>
+                <b>Min Temperature: </b> {{todayData[0].minTemp}}<br>
             </div>
         </div>
-        <div ng-repeat="x in filteredList">
-            <div class="col-3 col-sm-6  col-md-3">
-               <span>Day</span> {{x.time}}<br>
-                <span>Conditions</span> {{x.cond}}<br>
-                <span>Weather Icon</span> <img src={{x.weatherIcon}} /><br>
-                <span>Temperature</span> {{x.degree}}<br>
-                <span>Max Temperature</span> {{x.maxTemp}}<br>
-                <span>Min Temperature</span> {{x.minTemp}}<br>
+        <div class="row">
+            <div ng-repeat="x in filteredList">
+                <div class="col-3 col-sm-6  col-md-3">
+                    <b>Day: </b> {{x.time}}<br>
+                    <b>Conditions: </b> {{x.cond}}<br>
+                    <b>Weather Icon: </b> <img src={{x.weatherIcon}} /><br>
+                    <b>Temperature: </b> {{x.degree}}<br>
+                    <b>Max Temperature: </b> {{x.maxTemp}}<br>
+                    <b>Min Temperature: </b> {{x.minTemp}}<br>
+                </div>
             </div>
         </div>
     </div>    
-    
+
 <div ng-if="currentTemp">
     <label>Input City Temprature: {{currentTemp}}</label>
 </div>
